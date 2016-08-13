@@ -1,4 +1,4 @@
 # findviewbyid-to-bindview
 Android plugin for converting findViewById(R.id.xx) to ButterKnife field.
 
-![Demo gif](http://imgur.com/a/MP5aP)
+![Demo gif](http://i.imgur.com/ekbAxWI.gif)
