@@ -1,0 +1,46 @@
+<idea-plugin version="2">
+  <id>tw.yalan.android.plugin.findviewbyidtobindview</id>
+  <name>FindViewById to BindView</name>
+  <version>1.0</version>
+  <vendor email="ch8154@gmail.com" url="https://github.com/ch8154">FindViewByIdToBindView</vendor>
+
+  <description><![CDATA[
+      Android plugin for converting findViewById(R.id.xx) to ButterKnife field.
+    ]]></description>
+
+  <change-notes><![CDATA[
+        <html>
+          <b>1.0</b> (8/14/2016)
+           <ul>
+             <li>First release</li>
+           </ul>
+        </html>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="123.72"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij.modules.lang">
+  </extensions>
+
+  <actions>
+    <group id="ButterKnifeSupport.Generate" text="findViewByIdConvertToBindView"
+           description="findViewById convert to @BindView() field.">
+
+      <action id="ButterKnifeSupport.FindViewByIdToBindViewAction"
+              class="FindViewByIdToBindView"
+              text="findViewById to @BindView()" description="findViewById convert to @BindView() field.">
+      </action>
+      <add-to-group group-id="GenerateGroup"/>
+
+    </group>
+  </actions>
+
+</idea-plugin>
