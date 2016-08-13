@@ -1,8 +1,8 @@
 <idea-plugin version="2">
   <id>tw.yalan.android.plugin.findviewbyidtobindview</id>
   <name>FindViewById to BindView</name>
-  <version>1.0</version>
-  <vendor email="ch8154@gmail.com" url="https://github.com/ch8154">FindViewByIdToBindView</vendor>
+  <version>1.1</version>
+  <vendor email="ch8154@gmail.com" url="https://github.com/ch8154/findviewbyid-to-bindview">Yalan</vendor>
 
   <description><![CDATA[
       Android plugin for converting findViewById(R.id.xx) to ButterKnife field.
@@ -10,7 +10,12 @@
 
   <change-notes><![CDATA[
         <html>
-          <b>1.0</b> (8/14/2016)
+          <b>1.1</b> (8/13/2016)
+           <ul>
+             <li>Fix plugin depends.</li>
+           </ul>
+
+          <b>1.0</b> (8/13/2016)
            <ul>
              <li>First release</li>
            </ul>
@@ -27,8 +32,7 @@
   <depends>com.intellij.modules.lang</depends>
   -->
 
-  <extensions defaultExtensionNs="com.intellij.modules.lang">
-  </extensions>
+  <depends>com.intellij.modules.lang</depends>
 
   <actions>
     <group id="ButterKnifeSupport.Generate" text="findViewByIdConvertToBindView"
