@@ -81,9 +81,10 @@ public class FindViewByIdToBindView extends BaseGenerateAction {
                 //或許是全域;
                 PsiAssignmentExpression assignmentExpression = (PsiAssignmentExpression) expression;
                 ParseResult parseResult = Parser.parsePsiAssignmentExpression(method, assignmentExpression, blockParamsKey);
-                parseResults.add(parseResult);
-
-                System.out.printf(parseResult.toString());
+                if (parseResult != null) {
+                    parseResults.add(parseResult);
+                    System.out.printf(parseResult.toString());
+                }
             } else if (expression instanceof PsiMethodCallExpression) {
 
                 //findViewById(R.id.).set....
@@ -105,9 +106,10 @@ public class FindViewByIdToBindView extends BaseGenerateAction {
 
             PsiDeclarationStatement declarationStatement = (PsiDeclarationStatement) statement;
             BodyDeclareParseResult bodyDeclareParseResult = Parser.parsePsiDeclarationStatement(method, declarationStatement);
-            System.out.printf(bodyDeclareParseResult.toString());
-            parseResults.add(bodyDeclareParseResult);
-
+            if (bodyDeclareParseResult != null) {
+                System.out.printf(bodyDeclareParseResult.toString());
+                parseResults.add(bodyDeclareParseResult);
+            }
         }
     }
 

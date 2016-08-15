@@ -1,15 +1,21 @@
 <idea-plugin version="2">
-  <id>tw.yalan.android.plugin.findviewbyidtobindview</id>
-  <name>FindViewById to BindView</name>
-  <version>1.1</version>
-  <vendor email="ch8154@gmail.com" url="https://github.com/ch8154/findviewbyid-to-bindview">Yalan</vendor>
+    <id>tw.yalan.android.plugin.findviewbyidtobindview</id>
+    <name>FindViewById to BindView</name>
+    <version>1.2</version>
+    <vendor email="ch8154@gmail.com" url="https://github.com/ch8154/findviewbyid-to-bindview">Yalan</vendor>
 
-  <description><![CDATA[
+    <description><![CDATA[
       Android plugin for converting findViewById(R.id.xx) to ButterKnife field.
     ]]></description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
         <html>
+           <b>1.2</b> (8/16/2016)
+           <ul>
+             <li>Fix some bugs.</li>
+             <li>Add some rule when parsing class.</li>
+           </ul>
+
           <b>1.1</b> (8/13/2016)
            <ul>
              <li>Fix plugin depends.</li>
@@ -21,30 +27,30 @@
            </ul>
         </html>
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="123.72"/>
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="123.72"/>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
 
-  <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.lang</depends>
 
-  <actions>
-    <group id="ButterKnifeSupport.Generate" text="findViewByIdConvertToBindView"
-           description="findViewById convert to @BindView() field.">
+    <actions>
+        <group id="ButterKnifeSupport.Generate" text="findViewByIdConvertToBindView"
+               description="findViewById convert to @BindView() field.">
 
-      <action id="ButterKnifeSupport.FindViewByIdToBindViewAction"
-              class="FindViewByIdToBindView"
-              text="findViewById to @BindView()" description="findViewById convert to @BindView() field.">
-      </action>
-      <add-to-group group-id="GenerateGroup"/>
+            <action id="ButterKnifeSupport.FindViewByIdToBindViewAction"
+                    class="FindViewByIdToBindView"
+                    text="findViewById to @BindView()" description="findViewById convert to @BindView() field.">
+            </action>
+            <add-to-group group-id="GenerateGroup"/>
 
-    </group>
-  </actions>
+        </group>
+    </actions>
 
 </idea-plugin>

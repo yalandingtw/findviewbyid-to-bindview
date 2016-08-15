@@ -137,7 +137,19 @@ public class Parser {
     public static boolean equalsFieldByText(PsiClass mClazz, String text) {
         PsiField[] allFields = mClazz.getAllFields();
         for (PsiField field : allFields) {
-            if (field.getText().equals(text)) {
+            String fieldText = field.getText();
+            if (field.getModifierList().hasModifierProperty("private")) {
+                fieldText = fieldText.replace("private", "");
+            } else if (field.getModifierList().hasModifierProperty("protected")) {
+                fieldText = fieldText.replace("protected", "");
+
+            } else if (field.getModifierList().hasModifierProperty("public")) {
+                fieldText = fieldText.replace("public", "");
+            }
+            if (fieldText.contains("=")) {
+                fieldText = fieldText.split("[=]")[0].trim() + ";";
+            }
+            if (fieldText.trim().equals(text)) {
                 return true;
             }
         }
